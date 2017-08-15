@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ogr="http://osgeo.org/gdal" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="56.868221108928111" minlon="25.181348481439517" maxlat="56.896542852749306" maxlon="25.215621262139010"/></metadata>                  
+<rte>
+  <name>Barona takas astotās dienas maršruts</name>
+  <extensions>
+    <ogr:id>139</ogr:id>
+    <ogr:user_id>13.0</ogr:user_id>
+    <ogr:descr>Barona takas astotās dienas maršruts</ogr:descr>
+    <ogr:ispublic>1</ogr:ispublic>
+    <ogr:path_type>4.0</ogr:path_type>
+    <ogr:startname>Kino muzejs Ķeipenē</ogr:startname>
+    <ogr:endname>Aliņkalns</ogr:endname>
+    <ogr:create_date>2012/07/05  9:57:34</ogr:create_date>
+    <ogr:change_date>2012/07/05  9:57:34</ogr:change_date>
+  </extensions>
+  <rtept lat="56.896517521294903" lon="25.18458298504687">
+  </rtept>
+  <rtept lat="56.896542852749306" lon="25.181907646296946">
+  </rtept>
+  <rtept lat="56.895615847428473" lon="25.181779523848711">
+  </rtept>
+  <rtept lat="56.894729781472478" lon="25.181656972164966">
+  </rtept>
+  <rtept lat="56.894165292141622" lon="25.181542255032515">
+  </rtept>
+  <rtept lat="56.893824759699051" lon="25.181348481439517">
+  </rtept>
+  <rtept lat="56.893697680211488" lon="25.18239943241143">
+  </rtept>
+  <rtept lat="56.893545899099799" lon="25.183492690813559">
+  </rtept>
+  <rtept lat="56.892948744588075" lon="25.184959299217027">
+  </rtept>
+  <rtept lat="56.892102665168906" lon="25.1865795090179">
+  </rtept>
+  <rtept lat="56.891695792144553" lon="25.187394141769449">
+  </rtept>
+  <rtept lat="56.890410390017252" lon="25.189945281138264">
+  </rtept>
+  <rtept lat="56.889176131090743" lon="25.192394596473594">
+  </rtept>
+  <rtept lat="56.888174419249196" lon="25.194238795761944">
+  </rtept>
+  <rtept lat="56.88780793597455" lon="25.194911187935851">
+  </rtept>
+  <rtept lat="56.88708559324553" lon="25.196236445385896">
+  </rtept>
+  <rtept lat="56.886646236365358" lon="25.197434002820433">
+  </rtept>
+  <rtept lat="56.886293508646091" lon="25.198517084862491">
+  </rtept>
+  <rtept lat="56.886089031102514" lon="25.199761187791857">
+  </rtept>
+  <rtept lat="56.886012498487801" lon="25.201048473559474">
+  </rtept>
+  <rtept lat="56.885919059634745" lon="25.201866266263636">
+  </rtept>
+  <rtept lat="56.885631601510994" lon="25.202834051148447">
+  </rtept>
+  <rtept lat="56.885189213511254" lon="25.204344035633277">
+  </rtept>
+  <rtept lat="56.885073952319892" lon="25.205200092692817">
+  </rtept>
+  <rtept lat="56.885030056202027" lon="25.205748933968017">
+  </rtept>
+  <rtept lat="56.884422179390789" lon="25.205968647109433">
+  </rtept>
+  <rtept lat="56.884152682087354" lon="25.20630736779416">
+  </rtept>
+  <rtept lat="56.883711761629023" lon="25.206675260494347">
+  </rtept>
+  <rtept lat="56.883194423044607" lon="25.207075478674298">
+  </rtept>
+  <rtept lat="56.882827533977014" lon="25.207654193123382">
+  </rtept>
+  <rtept lat="56.88251961809403" lon="25.208026348099065">
+  </rtept>
+  <rtept lat="56.882155412778395" lon="25.208327223741708">
+  </rtept>
+  <rtept lat="56.881316534661089" lon="25.208543335956282">
+  </rtept>
+  <rtept lat="56.880555439445537" lon="25.208588248485604">
+  </rtept>
+  <rtept lat="56.880192218107915" lon="25.2087849445704">
+  </rtept>
+  <rtept lat="56.879923699351664" lon="25.209019390182206">
+  </rtept>
+  <rtept lat="56.879465438592405" lon="25.209213029808218">
+  </rtept>
+  <rtept lat="56.878798665874307" lon="25.209330382186568">
+  </rtept>
+  <rtept lat="56.878713526335787" lon="25.209287595108595">
+  </rtept>
+  <rtept lat="56.878186270705477" lon="25.209727402436094">
+  </rtept>
+  <rtept lat="56.877091206954837" lon="25.21087295416109">
+  </rtept>
+  <rtept lat="56.876648220134335" lon="25.211449017759957">
+  </rtept>
+  <rtept lat="56.876279920302494" lon="25.212166573466529">
+  </rtept>
+  <rtept lat="56.876086800382993" lon="25.212472876759421">
+  </rtept>
+  <rtept lat="56.875920504725599" lon="25.212737987491856">
+  </rtept>
+  <rtept lat="56.8756438074644" lon="25.213048966799651">
+  </rtept>
+  <rtept lat="56.875336919010479" lon="25.213316822490583">
+  </rtept>
+  <rtept lat="56.873700662875606" lon="25.213402742717332">
+  </rtept>
+  <rtept lat="56.872996186786359" lon="25.213484152008125">
+  </rtept>
+  <rtept lat="56.872197010828273" lon="25.213527701583786">
+  </rtept>
+  <rtept lat="56.871607694628054" lon="25.213508610841902">
+  </rtept>
+  <rtept lat="56.871226835280382" lon="25.213565749324296">
+  </rtept>
+  <rtept lat="56.870995308142646" lon="25.213905529742348">
+  </rtept>
+  <rtept lat="56.870687383454417" lon="25.214277536867172">
+  </rtept>
+  <rtept lat="56.87024640721333" lon="25.214645202684661">
+  </rtept>
+  <rtept lat="56.869481225031002" lon="25.215106565114564">
+  </rtept>
+  <rtept lat="56.868603014659712" lon="25.215460045738212">
+  </rtept>
+  <rtept lat="56.868221108928111" lon="25.21562126213901">
+  </rtept>
+</rte>
+</gpx>

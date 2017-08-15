@@ -16,18 +16,7 @@
     <title>Velo karte</title>
     <head>
         <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-        <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=geometry"></script>-->
-        <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyDQoxfPIqBRTbH2mk9WhTb0B8ezcvZLEf8"></script>-->
-<!--          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQoxfPIqBRTbH2mk9WhTb0B8ezcvZLEf8&callback=initMap" type="text/javascript"></script>-->
-        
-<!--        <script type="text/javascript" src="/js/leaflet-src.js"></script>
-        <script type="text/javascript" src="/js/Control.FullScreen.js"></script>
-        <script type="text/javascript" src="/js/leaflet.markercluster-src.js"></script>
-        
-        <script type="text/javascript" src="/js/common.js"></script>
-        <script type="text/javascript" src="/js/path.js"></script>
-        <script type="text/javascript" src="/js/tracks.js"></script>-->
-        <!--<link rel="stylesheet" href="/css/style.css"/>-->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyDQoxfPIqBRTbH2mk9WhTb0B8ezcvZLEf8"></script>
     </head>
     <body>
         
@@ -35,8 +24,7 @@
         <input type="button" id="btn_search" value="Search" />
         
         <div id="filters"></div>
-        <div id="rez_html" style="display: none;"></div>
-        <div id="map" style="width: 500px; height: 500px;"></div>
+        <div id="map" style="width: 500px; height: 500px; margin-top: 20px;"></div>
         
         
         <script>
@@ -89,34 +77,69 @@
                                     },
                                     success:function(a)
                                     {
-                                        $("#rez_html").html(a.result.html);
+//                                        $("#rez_html").html(a.result.html);
+
+//                                        console.log( a.result.f_path );
+                                        var
+                                            f_path = "/uploads/"+a.result.f_path;
+                                            
+//                                        console.log(url);
                                         
-                                        var map = new google.maps.Map(document.getElementById('map'), {
-                                          zoom: 11,
-                                          center: {lat: -34.397, lng: 150.644},
-                                          mapTypeId: 'terrain'
-                                        });
-                                        
-                                        var src = "<?php echo 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']; ?>/uploads/output.kml";
-                                        
-                                        var kmlLayer = new google.maps.KmlLayer(src, {
-                                            suppressInfoWindows: true,
-                                            preserveViewport: false,
-                                            map: map
+                                        var map = new google.maps.Map(document.getElementById("map"), {
+                                            mapTypeId: google.maps.MapTypeId.TERRAIN
                                           });
-/*
-                                        var ctaLayer = new google.maps.KmlLayer({
-//                                          url: 'http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml',
-                                          url: "<?php echo 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']; ?>/uploads/output.kml",
-                                          map: map
-                                        });
-*/                                        
+
+                                          $.ajax({
+                                           type: "GET",
+                                           url: f_path,
+                                           dataType: "xml",
+                                           success: function(xml) {
+                                             var points = [];
+                                             var bounds = new google.maps.LatLngBounds ();
+                                             $(xml).find("rtept").each(function() {
+                                               var lat = $(this).attr("lat");
+                                               var lon = $(this).attr("lon");
+                                               var p = new google.maps.LatLng(lat, lon);
+                                               points.push(p);
+                                               bounds.extend(p);
+                                             });
+                                             
+//                                             console.log( $(xml).find("rtept").attr("lat") );
+//                                             console.log( $(xml).find("rtept").attr("lon") );
+                                             
+                                             //set start marker
+                                             var
+                                                marker_coord = new google.maps.LatLng($(xml).find("rtept").attr("lat"), $(xml).find("rtept").attr("lon"));//{lat: new google.maps.LatLng($(xml).find("rtept").attr("lat")), lng: new google.maps.LatLng($(xml).find("rtept").attr("lon"))};
+                                                
+//                                            console.log( marker_coord );
+//                                            
+                                            //drow path line
+                                             var poly = new google.maps.Polyline({
+                                               // use your own style here
+                                               path: points,
+                                               strokeColor: "#FF00AA",
+                                               strokeOpacity: .7,
+                                               strokeWeight: 4
+                                             });
+
+                                            //draw marker
+                                             var marker = new google.maps.Marker({
+                                                position: marker_coord,
+                                                map: map,
+                                                title: 'Hello World!'
+                                              });
+
+
+                                             poly.setMap(map);
+
+                                             // fit bounds to track
+                                             map.fitBounds(bounds);
+                                           }
+                                          });
                                     }
                                 });
                           });
             });
         </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQoxfPIqBRTbH2mk9WhTb0B8ezcvZLEf8"></script>
-
     </body>
 </html>

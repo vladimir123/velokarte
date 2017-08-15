@@ -75,69 +75,27 @@ switch($_REQUEST["action"]){
     
     case "get_path":
         $path_id = $_POST["path_id"];
-        $req_url = "http://velokarte.divritenis.lv/";
+        $req_url = "http://velokarte.divritenis.lv/?r=path/download&format=gpx&pid=".$path_id;
+        $upload_dir = "../uploads/";
+        
         try
         {
-            $curl = curl_init();
-            $params = array(
-                "r" => "path/info",
-                "pid" => $path_id
-            );
-            
-            curl_setopt($curl, CURLOPT_URL, $req_url);
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($curl, CURLOPT_POST, true);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($params));
-            
-            $html = curl_exec($curl);
-            
-            if (!curl_exec($curl))
-            {
-                echo "Error in getting results => ".  curl_error($curl);
-                var_dump( "Error in getting results => ".  curl_error($curl) );
-                die;
-            }
-            
-            curl_close($curl);
-            
-            $dom = new simple_html_dom();
-//            var_dump( $html );die;
-
-            $tt = preg_split("/LINESTRING/", $html);
-            $tt_ = preg_split("/<script/", $tt[1]);
-            $t_coords = explode(" />", $tt_[0]);
-            $tt_coords = explode("(", $t_coords[0]);
-            $tt_coords_ = explode(")", $tt_coords[1]);
-            $coords = $tt_coords_[0];
-            
-//            $arr[] = preg_replace("/ /", ",", preg_split("/,/", $coords));
-            $arr = preg_split("/,/", $coords);
-            
-//            var_dump( $arr );die;
-            
-            foreach( $arr as $val )
-            {
-//                var_dump( explode(" ", $val) );
-                $val = explode(" ", $val);
-                
-                $data["result"]["lat"] = $val[1];
-                $data["result"]["lng"] = $val[0];
-            }
-            
-//            $data["result"]["coords"] = $arr;
-            
-//            $data["result"]["html"] = $html;
+            $file = file_put_contents($upload_dir.$path_id.".gpx", file_get_contents($req_url));
         }
-        catch(Exception $e)
+        catch(Exception $ex)
         {
-            echo "Error in getting results => ".$e->getMessage();
-            var_dump( "Error in getting results => ".$e->getMessage() );
+            var_dump( "Error in getting *.gpx file => ".$ex->getMessage() );
         }
         
+        $path_tmp = pathinfo($upload_dir.$path_id.".gpx");
+        $file_path = /*$path_tmp["dirname"]."/".*/$path_tmp["basename"];
+        
+//        var_dump( $file );
+//        var_dump( __FILE__.$path_tmp );
+        
+        $data["result"]["f_path"] = $file_path;
     break;
 }
-
-//mysqli_close($link);
 echo json_encode($data);
 
 ?>
