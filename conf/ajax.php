@@ -53,7 +53,6 @@ switch($_REQUEST["action"]){
             }
             
             curl_close($curl);
-//            var_dump( $req_rez );
             
             $json = json_decode($req_rez);
         }
@@ -78,6 +77,7 @@ switch($_REQUEST["action"]){
         $req_url = "http://velokarte.divritenis.lv/?r=path/download&format=gpx&pid=".$path_id;
         $upload_dir = "../uploads/";
         
+        //get coordinates
         try
         {
             $file = file_put_contents($upload_dir.$path_id.".gpx", file_get_contents($req_url));
@@ -88,10 +88,7 @@ switch($_REQUEST["action"]){
         }
         
         $path_tmp = pathinfo($upload_dir.$path_id.".gpx");
-        $file_path = /*$path_tmp["dirname"]."/".*/$path_tmp["basename"];
-        
-//        var_dump( $file );
-//        var_dump( __FILE__.$path_tmp );
+        $file_path = $path_tmp["basename"];
         
         $data["result"]["f_path"] = $file_path;
     break;

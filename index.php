@@ -77,8 +77,6 @@
                                     },
                                     success:function(a)
                                     {
-//                                        $("#rez_html").html(a.result.html);
-
 //                                        console.log( a.result.f_path );
                                         var
                                             f_path = "/uploads/"+a.result.f_path;
