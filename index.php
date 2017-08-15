@@ -79,7 +79,7 @@
                                     {
 //                                        console.log( a.result.f_path );
                                         var
-                                            f_path = "/uploads/"+a.result.f_path;
+                                            f_path = "uploads/"+a.result.f_path;
                                             
 //                                        console.log(url);
                                         
