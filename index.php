@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=8" />    
     <title>Velo karte</title>
     <head>
-        <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyDQoxfPIqBRTbH2mk9WhTb0B8ezcvZLEf8"></script>
     </head>
     <body>
